@@ -1,7 +1,7 @@
-package com.aapkaapnadhaba.com.demo.service;
+package com.aapkaapnadhaba.service;
 
 import Model.Customer;
-import com.aapkaapnadhaba.com.demo.Repository.FoodAppRepository;
+import com.aapkaapnadhaba.Repository.FoodAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.aapkaapnadhaba.com.demo;
+package com.aapkaapnadhaba;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

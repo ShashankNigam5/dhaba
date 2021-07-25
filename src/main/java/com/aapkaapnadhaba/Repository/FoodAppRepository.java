@@ -1,5 +1,5 @@
 
-package com.aapkaapnadhaba.com.demo.Repository;
+package com.aapkaapnadhaba.Repository;
 
 import Model.Customer;
 import org.springframework.data.repository.CrudRepository;

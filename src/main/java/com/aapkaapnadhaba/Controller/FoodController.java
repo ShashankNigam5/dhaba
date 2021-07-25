@@ -1,8 +1,7 @@
-package com.aapkaapnadhaba.com.demo.Controller;
+package com.aapkaapnadhaba.Controller;
 
 import Model.Customer;
-import com.aapkaapnadhaba.com.demo.service.FoodAppService;
-import com.aapkaapnadhaba.com.demo.service.FoodAppServiceImpl;
+import com.aapkaapnadhaba.service.FoodAppServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

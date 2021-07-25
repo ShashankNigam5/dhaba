@@ -1,4 +1,4 @@
-package com.aapkaapnadhaba.com.demo.service;
+package com.aapkaapnadhaba.service;
 
 import Model.Customer;
 import org.springframework.stereotype.Service;
