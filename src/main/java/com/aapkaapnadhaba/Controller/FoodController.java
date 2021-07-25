@@ -1,13 +1,13 @@
 package com.aapkaapnadhaba.Controller;
 
-import Model.Customer;
+import com.aapkaapnadhaba.Model.Customer;
 import com.aapkaapnadhaba.service.FoodAppServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -23,5 +23,31 @@ public class FoodController {
 
         ResponseEntity<Customer> customerResponseEntity = new ResponseEntity<>(customer, HttpStatus.CREATED);
         return customerResponseEntity;
+    }
+
+    @PostMapping("/create/user")
+    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
+        Customer savedCustomer = foodAppService.save(customer);
+
+        ResponseEntity<Customer> customerResponseEntity = new ResponseEntity<>(customer, HttpStatus.CREATED);
+        return customerResponseEntity;
+    }
+
+    @GetMapping("/user/{customerId}")
+    public ResponseEntity<Customer> getUserById(@PathVariable("customerId") String id){
+        Optional<Customer> customer =  foodAppService.findById(id);
+        if(customer.isPresent()){
+            ResponseEntity<Customer> customerResponseEntity = new ResponseEntity<>(customer.get(), HttpStatus.CREATED);
+            return customerResponseEntity;
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<Iterable<Customer>> findAllUsers(){
+        Iterable<Customer> customers = foodAppService.findAllCustomers();
+        return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 }

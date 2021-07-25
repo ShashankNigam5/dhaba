@@ -1,4 +1,4 @@
-package Model;
+package com.aapkaapnadhaba.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Table(name = "customer")
 public class Customer {
     @Id
+    @Column(name = "id")
     private String id;
 
     @Column(name = "name")

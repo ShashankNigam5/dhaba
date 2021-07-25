@@ -1,7 +1,6 @@
 package com.aapkaapnadhaba.service;
 
-import Model.Customer;
-import org.springframework.stereotype.Service;
+import com.aapkaapnadhaba.Model.Customer;
 
 public interface FoodAppService {
 
